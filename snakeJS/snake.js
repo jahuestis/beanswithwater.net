@@ -165,8 +165,8 @@ function drawBackground() {
 }
 
 function drawBlock(x, y, color, size=blockSize) {
-    context.fillStyle = color
-    context.fillRect(x * size, y * size, size, size)
+    context.fillStyle = color;
+    context.fillRect(x * size + 1, y * size + 1, size - 2, size - 2);
 }
 
 function randInt(min, max) {
