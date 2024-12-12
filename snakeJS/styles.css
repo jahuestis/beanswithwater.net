@@ -2,5 +2,11 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;    
+    color: lime;
+    background-color: black;
 
+}
+
+#board {
+    border: 1px solid lime;
 }
