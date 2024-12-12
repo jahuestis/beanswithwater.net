@@ -60,7 +60,7 @@ window.onload = function() {
 
 function startGameSession() {
     restartMessage.style.display = "none";
-    score = 0;
+    score = 1;
     gameover = false;
     if (gameSession != null) {
         clearInterval(gameSession);
@@ -145,8 +145,6 @@ function update() {
         snake.forEach(segment => {
             drawBlock(segment[0], segment[1], "lime");
         })
-    } else {
-        drawBackground();
     }
     
     scoreBoard.innerHTML = score;
