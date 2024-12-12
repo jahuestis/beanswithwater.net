@@ -2,5 +2,29 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;    
+    color: lime;
+    background-color: black;
 
+}
+
+.games {
+    display: inline-block;
+    margin: auto;
+    width: 12%;
+    height: 9%;
+}
+.gamethumbnails {
+    width: 100%;
+}
+
+.gametitles {
+    color: lime;
+}
+
+#wariomolly {
+    width: 40%;
+}
+
+#menu {
+    text-align: center;
 }
