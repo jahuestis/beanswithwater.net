@@ -14,15 +14,23 @@ body {
     height: 9%;
 }
 .gamethumbnails {
-    width: 100%;
+    height: 90%;
 }
 
 .gametitles {
     color: lime;
 }
 
-#wariomolly {
-    width: 40%;
+.funnypics {
+    display: inline-block;
+    height: 100%;
+    width: auto;
+}
+
+#funnydiv {
+    height: 60vh;
+    width: auto;
+    text-align: center;
 }
 
 #menu {
