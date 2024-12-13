@@ -7,10 +7,6 @@ body {
 
 }
 
-a {
-    text-decoration: none;
-}
-
 img {
     image-rendering: crisp-edges;
     image-rendering: pixelated;
@@ -19,8 +15,14 @@ img {
 .games {
     display: inline-block;
     width: 7%;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 6px;
+    margin-right: 6px;
+    padding: 2px;
+}
+.gamelinks {
+    text-decoration: none;
+    padding: 0px;
+    margin: 0px;
 }
 .gamethumbnails {
     width: 100%
@@ -32,12 +34,10 @@ img {
 
 .funnypics {
     display: inline-block;
-    height: 100%;
-    width: auto;
+    width: 30%;
 }
 
 #funnydiv {
-    height: 60vh;
     width: auto;
     text-align: center;
 }
@@ -46,3 +46,6 @@ img {
     text-align: center;
 }
 
+.hovered {
+    outline: 2px solid lime;
+}

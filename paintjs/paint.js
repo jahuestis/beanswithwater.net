@@ -16,7 +16,7 @@ clearButton.addEventListener('click', function() {
 });
 
 // Set up color selection
-var colors = document.getElementsByName("color");
+var colors = Array.from(document.getElementsByName("color"));
 var colorSelected;
 colors.forEach(color => {
     if (color.checked) {
