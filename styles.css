@@ -7,14 +7,23 @@ body {
 
 }
 
+a {
+    text-decoration: none;
+}
+
+img {
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+
 .games {
     display: inline-block;
-    margin: auto;
-    width: 12%;
-    height: 9%;
+    width: 7%;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 .gamethumbnails {
-    height: 90%;
+    width: 100%
 }
 
 .gametitles {
@@ -36,3 +45,4 @@ body {
 #menu {
     text-align: center;
 }
+
