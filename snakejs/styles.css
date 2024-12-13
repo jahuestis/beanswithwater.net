@@ -14,3 +14,4 @@ body {
     image-rendering: pixelated; /* For crisp scaling */
     image-rendering: crisp-edges; /* Alternative for some browsers */
 }
+
