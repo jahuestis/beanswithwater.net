@@ -48,7 +48,7 @@ img {
 }
 
 .hovered {
-    outline: 2px solid lime;
+    transform: scale(1.1);
 }
 
 #backlink {
