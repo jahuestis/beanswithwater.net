@@ -14,7 +14,7 @@ img {
 
 .games {
     display: inline-block;
-    width: 7%;
+    min-width: 7%;
     margin-left: 6px;
     margin-right: 6px;
     padding: 2px;
