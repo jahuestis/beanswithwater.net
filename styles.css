@@ -14,9 +14,9 @@ img {
 
 .games {
     display: inline-block;
-    min-width: 7%;
-    margin-left: 6px;
-    margin-right: 6px;
+    width: 14ch;
+    margin-left: .8rem;
+    margin-right: .8rem;
     padding: 2px;
 }
 .gamelinks {
@@ -25,12 +25,15 @@ img {
     margin: 0px;
 }
 .gamethumbnails {
-    width: 100%
+    width: 100%;
 }
 
 .gametitles {
     color: lime;
     margin: 2px;
+    overflow: hidden; /* Prevent text from overflowing */
+    text-overflow: ellipsis; /* Adds ellipsis for overflowed text */
+    white-space: nowrap; /* Ensures text stays on one line */
 }
 
 .funnypics {
