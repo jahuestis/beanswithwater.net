@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;    
+    color: lime;
+    background-color: black;
+
+}
+
+#canvas {
+    border: 2px solid lime;
+    padding: 2px;
+    width: 40%;
+    image-rendering: pixelated; /* For crisp scaling */
+    image-rendering: crisp-edges; /* Alternative for some browsers */
+}
+
+#alert {
+    color: red;
+}
+
+#cooldown {
+    color: red;
+}
+
+#download {
+    border: 2px solid lime;    /* Lime border */
+    background-color: transparent; /* No background */
+    color: lime;
+    font-size: 1.2em;     
+    margin-top: 2vh;
+}
+
+button:active {
+    transform: scale(0.95); /* Slightly shrink the button */
+
+}
+
+#colors {
+    width: 60%;
+    margin: auto;
+}
+
+.color {
+    display: inline-block;
+}
+
+.red {
+    color: red;
+    accent-color: red;
+}
+
+.orange {
+    color: orange;
+    accent-color: orange;
+}
+
+.yellow {
+    color: yellow;
+    accent-color: yellow;
+}
+
+.lime {
+    color: lime;
+    accent-color: lime;
+}
+
+.blue {
+    color: dodgerblue;
+    accent-color: dodgerblue;
+}
+
+.magenta {
+    color: magenta;
+    accent-color: magenta;
+}
+
+.white {
+    color: white;
+    accent-color: white;
+}
+
+.black {
+    color: #333333;
+    accent-color: #333333;
+}
+
+.gray {
+    color: gray;
+    accent-color: gray;
+}
+
+.brown {
+    color: brown;
+    accent-color: brown;
+}
+
+.pink {
+    color: pink;
+    accent-color: pink;
+}
