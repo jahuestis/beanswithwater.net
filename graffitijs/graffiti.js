@@ -59,19 +59,19 @@ function connectWebSocket() {
 }
 
 // Reconnection
-window.addEventListener('online', () => {
-    console.log('Network connection restored. Attempting to reconnect WebSocket...');
+setInterval(() => {
     if (!socket || socket.readyState === WebSocket.CLOSED) {
         connectWebSocket();
     }
-});
+}, 3000);
+
+
+// Initial connection
+connectWebSocket();
 
 window.addEventListener('offline', () => {
     console.log('Network connection lost.');
 });
-
-// Initial connection
-connectWebSocket();
 
 socket.addEventListener('message', (event) => {
     const message = JSON.parse(event.data);
