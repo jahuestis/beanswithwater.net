@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;    
+    color: lime;
+    background-color: black;
+
+}
+
+p {
+    margin: 0.5em 1em 0.5em 1em;
+    font-size: 1.2em
+}
+
+button:active {
+    transform: scale(0.95); /* Slightly shrink the button */
+
+}
+
+#chat {
+    text-align: left;
+    width: 60%;
+    height: 70vh;
+    border: 2px solid lime;
+    overflow-y: auto;
+    margin: auto;
+    padding: 0.25em 0 0.25em 0;
+}
+
+#input-div {
+    width: 80%;
+    padding: 12px;
+    margin: auto;
+}
+
+#message-input {
+    border: 2px solid lime;    /* Lime border */
+    background-color: transparent; /* No background */
+    color: lime;     
+    width: 50%;
+    font-size: 1.2em;  
+}
+input:focus {
+    outline: none; /* Remove the blue outline when input is focused */
+}
+
+#channel-label {
+    font-size: 1.2em;
+    display: inline-block;
+}
+
+#channel-input {
+    border: 2px solid lime;    /* Lime border */
+    background-color: transparent; /* No background */
+    color: lime;     
+    width: 6ch;
+    font-size:1.2em; 
+    margin-bottom: 2vh;
+}
+
+#channel-randomize {
+    border: 2px solid lime;    /* Lime border */
+    background-color: transparent; /* No background */
+    color: lime;     
+    width: 8ch;
+    font-size:1.2em; 
+    margin-bottom: 2vh;
+}
+#send {          /* Set height to match width */
+    border: 2px solid lime;    /* Lime border */
+    background-color: transparent; /* No background */
+    color: lime;     
+    width: 8ch;
+    font-size:1.2em;          /* Lime text color */
+    
+}
+
+#colors-div {
+    margin: 10px;
+}
+
+.red {
+    color: red;
+    accent-color: red;
+}
+
+.orange {
+    color: orange;
+    accent-color: orange;
+}
+
+.yellow {
+    color: yellow;
+    accent-color: yellow;
+}
+
+.lime {
+    color: lime;
+    accent-color: lime;
+}
+
+.cyan {
+    color: cyan;
+    accent-color: cyan;
+}
+
+.magenta {
+    color: magenta;
+    accent-color: magenta;
+}
+
+.white {
+    color: white;
+    accent-color: white;
+}
