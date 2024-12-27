@@ -52,7 +52,29 @@ function connectWebSocket() {
     if (socket) {
         socket.close();
     }
+
     socket = new WebSocket('wss://node.beanswithwater.net/tune');
+
+    // listen for messages and respond accordingly
+    socket.addEventListener("message", (event) => {
+    //console.log(event.data);
+    const messageJSON = JSON.parse(event.data);
+    const application = messageJSON.application;
+    if (application === "tunejs") {
+        const type = messageJSON.type;
+        const data = messageJSON.data;
+        if (type === "requestClient") {
+            console.log('server requested client, sending current channel')
+            socket.send(jsonUpdateChannel(channel));
+        } else if (type === 'textMessage' || type === 'error') {
+            const text = document.createElement('p');
+            text.style.color = data.color;
+            text.textContent = data.text;
+            chat.appendChild(text);
+        }
+    }
+    
+})
 
     socket.onopen = () => {
         console.log('WebSocket connected.');
@@ -122,26 +144,6 @@ channelRandomize.addEventListener('click', function() {
     messageInput.focus();
 });
 
-// Receive messages and add to chat div
-socket.addEventListener("message", (event) => {
-    //console.log(event.data);
-    const messageJSON = JSON.parse(event.data);
-    const application = messageJSON.application;
-    if (application === "tunejs") {
-        const type = messageJSON.type;
-        const data = messageJSON.data;
-        if (type === "requestClient") {
-            //console.log('server requested client, sending current channel')
-            socket.send(jsonUpdateChannel(channel));
-        } else if (type === 'textMessage' || type === 'error') {
-            const text = document.createElement('p');
-            text.style.color = data.color;
-            text.textContent = data.text;
-            chat.appendChild(text);
-        }
-    }
-    
-})
 
 // JSON message creator
 function jsonMessage(type, data) {

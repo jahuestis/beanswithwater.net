@@ -42,7 +42,47 @@ function connectWebSocket() {
     if (socket) {
         socket.close();
     }
+
     socket = new WebSocket('wss://node.beanswithwater.net/graffiti');
+
+    // listen for messages and respond accordingly
+    socket.addEventListener('message', (event) => {
+        const message = JSON.parse(event.data);
+        const application = message.application;
+        const messageType = message.type;
+        const data = message.data;
+        
+        if (application === 'graffitijs') {
+            if (messageType === 'requestClient'){   
+                socket.send(jsonMessage('confirmClient', 0));
+        
+            } else if (messageType === 'fullcanvas') {
+                pixels = data.tiles;
+                width = data.width;
+                height = data.height;
+                canvas.width = width * upscale;
+                canvas.height = height * upscale;
+                canvasLoaded = true;
+            } else if (messageType === 'pixelchange') {
+                alertElement.style.display = 'none';
+                const pixelPosition = data.position;
+                const pixelColor = data.color;
+        
+                //console.log(`pixelchange: ${pixelPosition[0]}, ${pixelPosition[1]}, ${pixelColor}`);
+                pixels[pixelPosition[0]][pixelPosition[1]] = pixelColor;
+            } else if (messageType ==='cooldown') {
+                const cooldown = data.cooldown;
+                cooldownElement.textContent = `cooldown: ${Math.ceil(cooldown / 1000)} seconds`;
+                cooldownElement.style.display = 'block';
+                setTimeout(endCooldown, cooldown);
+            } else if (messageType === 'alert') {
+                alertElement.textContent = data.text;
+                alertElement.style.display = 'block';
+            } else {
+                console.log(event.data);
+            }
+        }
+    });
 
     socket.onopen = () => {
         console.log('WebSocket connected.');
@@ -71,44 +111,6 @@ connectWebSocket();
 
 window.addEventListener('offline', () => {
     console.log('Network connection lost.');
-});
-
-socket.addEventListener('message', (event) => {
-    const message = JSON.parse(event.data);
-    const application = message.application;
-    const messageType = message.type;
-    const data = message.data;
-    
-    if (application === 'graffitijs') {
-        if (messageType === 'requestClient'){   
-            socket.send(jsonMessage('confirmClient', 0));
-    
-        } else if (messageType === 'fullcanvas') {
-            pixels = data.tiles;
-            width = data.width;
-            height = data.height;
-            canvas.width = width * upscale;
-            canvas.height = height * upscale;
-            canvasLoaded = true;
-        } else if (messageType === 'pixelchange') {
-            alertElement.style.display = 'none';
-            const pixelPosition = data.position;
-            const pixelColor = data.color;
-    
-            //console.log(`pixelchange: ${pixelPosition[0]}, ${pixelPosition[1]}, ${pixelColor}`);
-            pixels[pixelPosition[0]][pixelPosition[1]] = pixelColor;
-        } else if (messageType ==='cooldown') {
-            const cooldown = data.cooldown;
-            cooldownElement.textContent = `cooldown: ${Math.ceil(cooldown / 1000)} seconds`;
-            cooldownElement.style.display = 'block';
-            setTimeout(endCooldown, cooldown);
-        } else if (messageType === 'alert') {
-            alertElement.textContent = data.text;
-            alertElement.style.display = 'block';
-        } else {
-            console.log(event.data);
-        }
-    }
 });
 
 function jsonMessage(type, data) {
