@@ -46,7 +46,43 @@ window.onload = function() {
 
 
 // -- Server/Client handling --
-const socket = new WebSocket('wss://node.beanswithwater.net/tune');
+let socket;
+
+function connectWebSocket() {
+    if (socket) {
+        socket.close();
+    }
+    socket = new WebSocket('wss://node.beanswithwater.net/tune');
+
+    socket.onopen = () => {
+        console.log('WebSocket connected.');
+    };
+
+    socket.onclose = () => {
+        console.log('WebSocket closed.');
+    };
+
+    socket.onerror = (error) => {
+        console.error('WebSocket error:', error);
+    };
+
+}
+
+// Reconnection
+window.addEventListener('online', () => {
+    console.log('Network connection restored. Attempting to reconnect WebSocket...');
+    if (!socket || socket.readyState === WebSocket.CLOSED) {
+        connectWebSocket();
+    }
+});
+
+window.addEventListener('offline', () => {
+    console.log('Network connection lost.');
+});
+
+// Initial connection
+connectWebSocket();
+
 
 // Send text messages
 function sendMessage() {
