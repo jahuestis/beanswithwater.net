@@ -70,6 +70,10 @@ function connectWebSocket() {
             const text = document.createElement('p');
             text.style.color = data.color;
             text.textContent = data.text;
+            if (isScrolledToBottom(chat)) {
+                setTimeout(scrollToBottom, 15, chat);
+                console.log('autoscrolling');
+            }
             chat.appendChild(text);
         }
     }
@@ -143,6 +147,16 @@ channelRandomize.addEventListener('click', function() {
     updateChannel();
     messageInput.focus();
 });
+
+
+// scroll to bottom
+function isScrolledToBottom(element) {
+    return element.scrollTop + element.clientHeight >= element.scrollHeight;
+}
+
+function scrollToBottom(element) {
+    element.scrollTop = element.scrollHeight;
+}
 
 
 // JSON message creator
