@@ -1,14 +1,22 @@
 
 // -- Page Setup --
-var randomChannel = Math.floor(Math.random() * 1001);
 var channel;
 var previousChannel;
 
 // Check if the URL contains a 'channel' parameter
 var url = new URL(window.location.href);
 if (url.searchParams.has("channel")) {
-    channel = parseInt(url.searchParams.get("channel"), 10);
+    let defaultChannel = url.searchParams.get("channel");
+    if (!Number.isInteger(defaultChannel)) {
+        defaultChannel = 0;
+    } else if (defaultChannel < 0) {
+        defaultChannel = 0;
+    } else if (defaultChannel > 1000) { 
+        defaultChannel = 1000;
+    }
+    channel = defaultChannel;
 } else {
+    let randomChannel = Math.floor(Math.random() * 1001);
     channel = randomChannel;
 }
 url.searchParams.set("channel", channel);
