@@ -6,10 +6,8 @@ var previousChannel;
 // Check if the URL contains a 'channel' parameter
 var url = new URL(window.location.href);
 if (url.searchParams.has("channel")) {
-    let defaultChannel = url.searchParams.get("channel");
-    if (!Number.isInteger(defaultChannel)) {
-        defaultChannel = 0;
-    } else if (defaultChannel < 0) {
+    let defaultChannel = parseInt(url.searchParams.get("channel"));
+    if (isNaN(defaultChannel) || defaultChannel < 0) {
         defaultChannel = 0;
     } else if (defaultChannel > 1000) { 
         defaultChannel = 1000;
