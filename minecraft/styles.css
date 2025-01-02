@@ -1,0 +1,13 @@
+
+
+.screenshot {
+    width: 60rem;
+    max-width: 100%;
+    padding: 4px;
+    border: 2px solid lime;
+}
+
+#screenshots-div {
+    width: 90%;
+    margin: auto;
+}
