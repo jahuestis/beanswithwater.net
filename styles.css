@@ -39,6 +39,7 @@ img {
 .funnypics {
     display: inline-block;
     width: 30rem;
+    max-width: 90%;
 }
 
 #funnydiv {

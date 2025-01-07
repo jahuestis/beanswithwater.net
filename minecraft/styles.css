@@ -2,7 +2,7 @@
 
 .screenshot {
     width: 60rem;
-    max-width: 100%;
+    max-width: 90%;
     padding: 4px;
     border: 2px solid lime;
 }
