@@ -3,8 +3,7 @@
 .screenshot {
     width: 60rem;
     max-width: 90%;
-    padding: 4px;
-    border: 2px solid lime;
+    margin: 4px;
 }
 
 #screenshots-div {
