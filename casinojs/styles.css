@@ -1,0 +1,220 @@
+
+
+html {
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;    
+    color: lime;
+    background-color: black;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+}
+
+p {
+    margin: 0.5em 1em 0.5em 1em;
+    font-size: 1.2em;
+}
+
+button, input {
+    color: lime;
+    text-align: center;
+    border: .3rem solid lime;
+    background-color: transparent;
+    font-size: 1.75rem;
+    padding: .25em;
+    margin: .15em;   
+    min-width: 6ch;
+    outline: none;
+}
+
+
+#raise-input {
+    width: 6ch;
+}
+
+.clickable:active, button:active {
+    transform: scale(0.975); /* Slightly shrink the button */
+
+}
+
+
+
+
+#game {
+    padding: 2px;
+    margin-top: 5vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+}
+
+#flex-stack {
+    display: flex;
+    flex-direction: column;
+}
+
+#flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+#loading-div, #main-menu, #matchmaking-stack, #change-name-menu {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    text-align: center;
+
+}
+
+#main-menu {
+    justify-content: flex-start;
+    margin: auto
+}
+
+#change-name-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#change-name-input-div {
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* player info & chat */
+
+#player-stack {
+    display: inline-block;
+    width: 30vw;
+}
+
+#player-info-div {
+    text-align: left;
+    border: .3rem solid lime;
+    margin-bottom: 8px;
+    
+}
+
+#chat-stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border: .3rem solid lime;
+}
+
+#chat-div {
+    flex-grow: 0;
+    margin: 0px;
+    text-align: left;
+    overflow: auto;
+    
+}
+
+#chat-input-div {
+    display: flex;
+}
+
+#chat-input {
+    text-align: left;
+    width: 100%;
+    min-width: 0;
+}
+
+
+#player-info, #chat-message {
+    margin: .85rem;
+    overflow-wrap: break-word;
+}
+
+
+/* poker area */
+
+#poker-wrapper {
+    display: inline-block;
+    margin-left: 8px;
+    width: 55vw;
+    border: .3rem solid lime;
+
+}
+
+#poker-stack {
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+    width: 100%;
+}
+
+#card-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1;
+}
+
+#community-div, #hole-div {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#hole-div {
+    margin-top: 3vh;
+}
+
+#spacer {
+    flex: 1;
+    min-height: 0px;
+}
+
+#game-info {
+    margin-top: 0;
+}
+
+#turn-indicator {
+    height: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cards {
+    width: 10rem;
+    margin: .25rem;
+}
+
+#action-div {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.action {
+    flex: 1;
+}
+
+.end-game-button {
+    flex: 1;
+}
+
+.menu-button {
+    width: 12ch;
+    justify-self: center;
+    align-self: center;
+}
+
+#backlink {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: lime;
+    font-size: 1.25rem;
+}
