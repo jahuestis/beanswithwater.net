@@ -1,0 +1,77 @@
+
+.window {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    position: absolute;
+    border: 2px solid lime;
+    text-align: left;
+}
+
+.window-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 8px;
+}
+
+.window-header {
+    display: flex;
+    width: 100%;
+    height: 25px;
+    border-bottom: 2px solid lime;
+}
+
+.window-label {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    height: 25px;
+    background-color: lime;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.window-closer {
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+.window-label-text {
+    padding: 0px;
+    margin-left: 8px;
+    color: black;
+}
+
+p {
+    margin: 0px;
+    padding: 0px;
+}
+
+.daisy-canvas {
+    align-self: center;
+    margin-top: 25px;
+    width: 160px;
+    height: 160px;
+}
+
+.breed-div {
+    margin-top: auto;
+}
+
+button, select {
+    background-color: black;
+    color: lime;
+    border: 2px solid lime;
+    font-size: 1.2em;
+    margin-right: 5px;
+}
+
+button:active {
+    transform: scale(0.95);
+}
