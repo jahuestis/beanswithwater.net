@@ -99,7 +99,7 @@ class DaisyWindow extends Window {
             }
             const parent1 = this.daisy;
             const parent2 = daisyWindow2.daisy;
-            const childDaisy = parent1.breed(parent2, "daisy " + daisyCounter++);
+            const childDaisy = parent1.breed(parent2, "Daisy " + daisyCounter++);
             const childDaisyWindow = new DaisyWindow(childDaisy, (this.x + daisyWindow2.x / 2 - windowWidth + (Math.random() * 200 - 100)), (this.y + daisyWindow2.y / 2) + 100 + Math.random() * 100, windowWidth, windowHeight);
             daisyWindows.push(childDaisyWindow);
             document.body.appendChild(childDaisyWindow.element);
